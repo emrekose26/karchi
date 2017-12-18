@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">KArchi</string>
+
+    <string name="language">Language: %1$s</string>
+    <string name="stars">Star: %1$s</string>
+    <string name="issues">Issues: %1$s</string>
+
+    <string name="languageItem">%1$s \nLanguage</string>
+    <string name="starsItem">%1$s \nStars</string>
+    <string name="issuesItem">%1$s \nIssues</string>
+</resources>

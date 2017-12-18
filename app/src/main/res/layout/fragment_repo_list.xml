@@ -1,0 +1,22 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/repoListRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context="com.emrekose.karchi.ui.main.RepoListFragment"
+            tools:listitem="@layout/item_repo" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerInParent="true"
+            android:visibility="gone" />
+    </RelativeLayout>
+</layout>

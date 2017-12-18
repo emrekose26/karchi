@@ -1,0 +1,58 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.0.1'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.2.10"
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+ext {
+    configuration = [
+            package          : "com.emrekose.karchi",
+            compileSdkVersion: 27,
+            targetSdkVersion : 27,
+            minSdkVersion    : 15,
+            versionCode      : 1,
+            versionName      : "1.0.0"
+    ]
+
+    libraries = [
+            kotlin             : "1.2.0",
+            support            : "27.0.2",
+            dataBinding        : "3.0.1",
+            arch               : "1.0.0",
+            archRuntime        : "1.0.3",
+            rxjava             : "2.1.7",
+            rxandroid          : "2.0.1",
+            dagger             : "2.13",
+            okhttp             : "3.9.1",
+            gson               : "2.8.2",
+            loggingInterceptor : "3.9.0",
+            retrofit           : "2.3.0",
+            stetho             : "1.5.0",
+            'picasso'          : "2.5.2",
+            'circleImg'        : "2.2.0",
+            'leakCanary'       : "1.5.4"
+
+    ]
+}
+

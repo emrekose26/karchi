@@ -1,0 +1,128 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="repos"
+            type="com.emrekose.karchi.data.local.entity.Repos" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fafafa">
+
+        <ImageView
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/octocat" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/text_repo_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="8dp"
+                android:paddingTop="8dp"
+                android:text="@{repos.description}"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
+                android:textSize="16sp"
+                tools:text="This is the description for this repository that can be fairly long" />
+
+            <TextView
+                android:id="@+id/text_language"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@{String.format(@string/language, repos.language)}"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                android:textColor="@color/secondary_text"
+                tools:text="Language: Java" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                android:textColor="@color/secondary_text"
+                android:text="@{String.format(@string/stars, repos.starCount)}"
+                tools:text="Star: 16" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                android:textColor="@color/secondary_text"
+                android:text="@{String.format(@string/issues, repos.openIssues)}"
+                tools:text="Issues: 3" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/divider" />
+
+            <RelativeLayout
+                android:id="@+id/layout_owner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/image_owner"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    tools:src="@mipmap/ic_launcher"
+                    app:imageUrl="@{repos.user.avatarUrl}"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@+id/image_owner"
+                    android:layout_toRightOf="@+id/image_owner"
+                    android:orientation="vertical"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp">
+
+                    <TextView
+                        android:id="@+id/text_owner_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{repos.user.username}"
+                        android:textColor="@color/secondary_text"
+                        android:textSize="16sp"
+                        tools:text="Owner Name" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:autoLink="web"
+                        android:text="@{repos.user.htmlUrl}"
+                        android:textColor="@color/secondary_text"
+                        android:textSize="14sp"
+                        tools:text="https://github.com/emrekose26" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>
